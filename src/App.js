@@ -1,7 +1,18 @@
-//import { Button } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
+import Contents from './components/contents'
+import Navbar from './components/navbar'
 
 function App() {
-  return <div className="App">HelloWord</div>
+  // let handleClick = () => {
+  //   toggleColorMode()
+  // }
+  //const { colorMode, toggleColorMode } = useColorMode()
+  return (
+    <Box>
+      <Navbar />
+      <Contents />
+    </Box>
+  )
 }
 
 export default App
