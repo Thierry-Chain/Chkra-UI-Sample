@@ -1,5 +1,5 @@
 import { Box } from '@chakra-ui/react'
-import Contents from './components/contents'
+import Body from './components/body'
 import Navbar from './components/navbar'
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   return (
     <Box>
       <Navbar />
-      <Contents />
+      <Body />
     </Box>
   )
 }
