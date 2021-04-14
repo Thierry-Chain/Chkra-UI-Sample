@@ -52,7 +52,7 @@ let Contents = () => {
             <Stack>
               <HStack
                 py=""
-                color={colorMode === 'dark' && 'whatsapp.500'}
+                color={colorMode === 'dark' ? 'whatsapp.500' : 'blue.600'}
                 fontWeight="bold"
                 fontSize="lg"
               >
