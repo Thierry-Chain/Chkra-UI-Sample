@@ -1,9 +1,19 @@
-import { Box, Flex, Text, Spacer, HStack, Button, Link } from '@chakra-ui/react'
-import { LinkIcon, SearchIcon, DragHandleIcon } from '@chakra-ui/icons'
+import {
+  Box,
+  Flex,
+  Text,
+  Spacer,
+  HStack,
+  Button,
+  useColorMode
+} from '@chakra-ui/react'
+import { LinkIcon, SearchIcon, SunIcon, MoonIcon } from '@chakra-ui/icons'
+import { NavLink } from 'react-router-dom'
 
 import React from 'react'
 
 function Navbar() {
+  const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Box bg="gray.600" p="3">
       <Flex align="baseline" color="whiteAlpha.500" alignContent="space-around">
@@ -13,26 +23,55 @@ function Navbar() {
           fontSize="xl"
           color="whiteAlpha.900"
         >
-          <LinkIcon /> Dribble
+          <LinkIcon />
+          <NavLink to="/">Dribble</NavLink>
         </Text>
 
         <HStack ml="6" display={{ base: 'none', md: 'inline-flex' }}>
-          <Link href="#" ml="2" fontSize="md" color="whiteAlpha.600">
-            Inspiration
-          </Link>
-          <Link href="#" ml="2" fontSize="md" color="whiteAlpha.600">
-            Find work
-          </Link>
-          <Link href="design" ml="2" fontSize="md" color="whiteAlpha.600">
-            Designers
-          </Link>
-          <Link href="#" ml="2" fontSize="md" color="whiteAlpha.600">
-            Learn design
-          </Link>
-          <Link href="#" ml="2" fontSize="md" color="whiteAlpha.600">
-            Hire Designers
-          </Link>
-          <DragHandleIcon ml="2" />
+          <NavLink to="/inp">
+            <Text ml="2" fontSize="md" color="whiteAlpha.600">
+              Inspiration
+            </Text>
+          </NavLink>
+          <NavLink to="/work">
+            <Text ml="2" fontSize="md" color="whiteAlpha.600">
+              Find work
+            </Text>
+          </NavLink>
+          <NavLink to="/design">
+            <Text ml="2" fontSize="md" color="whiteAlpha.600">
+              Designers
+            </Text>
+          </NavLink>
+          <NavLink to="/learn">
+            <Text ml="2" fontSize="md" color="whiteAlpha.600">
+              Learn design
+            </Text>
+          </NavLink>
+          <NavLink to="/hire">
+            <Text ml="2" fontSize="md" color="whiteAlpha.600">
+              Hire Designers
+            </Text>
+          </NavLink>
+          {colorMode === 'light' ? (
+            <MoonIcon
+              ml="3"
+              onClick={() => {
+                toggleColorMode()
+              }}
+              cursor="pointer"
+              fontSize="4xl"
+            />
+          ) : (
+            <SunIcon
+              ml="3"
+              onClick={() => {
+                toggleColorMode()
+              }}
+              cursor="pointer"
+              fontSize="2xl"
+            />
+          )}
         </HStack>
         <Spacer />
         <HStack>

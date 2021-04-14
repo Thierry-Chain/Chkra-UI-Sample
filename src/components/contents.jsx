@@ -5,7 +5,8 @@ import {
   Flex,
   HStack,
   Stack,
-  Circle
+  Circle,
+  useColorMode
 } from '@chakra-ui/react'
 import { PhoneIcon, StarIcon } from '@chakra-ui/icons'
 import img1 from '../assets/img/img1.jpg'
@@ -14,6 +15,8 @@ import img3 from '../assets/img/img3.jpg'
 import img4 from '../assets/img/img4.jpg'
 
 let Contents = () => {
+  let { colorMode } = useColorMode()
+
   return (
     <Box>
       <SimpleGrid columns={{ base: '1', lg: '2' }} spacing="5">
@@ -21,7 +24,7 @@ let Contents = () => {
           position="sticky"
           top="0"
           zIndex="1"
-          bg="gray.100"
+          bg={colorMode === 'light' ? 'gray.100' : 'gray.600'}
           align="center"
           ml="2"
         >
@@ -37,9 +40,14 @@ let Contents = () => {
               alt="no img 1"
             />
           </Circle>
-          <Box>
+          <Box color={colorMode === 'dark' && 'linkedin.400'}>
             <Stack>
-              <HStack py="" color="blue.600" fontWeight="bold" fontSize="lg">
+              <HStack
+                py=""
+                color={colorMode === 'dark' && 'whatsapp.500'}
+                fontWeight="bold"
+                fontSize="lg"
+              >
                 <Text>MOSE Creative Mints</Text>
                 <PhoneIcon ml="2" />
               </HStack>
