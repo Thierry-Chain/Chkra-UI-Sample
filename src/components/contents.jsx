@@ -13,9 +13,17 @@ import img1 from '../assets/img/img1.jpg'
 import img2 from '../assets/img/img2.jpg'
 import img3 from '../assets/img/img3.jpg'
 import img4 from '../assets/img/img4.jpg'
+import img5 from '../assets/img/img5.jpg'
+import img6 from '../assets/img/img6.jpg'
+import img7 from '../assets/img/img7.jpg'
 
 let Contents = () => {
   let { colorMode } = useColorMode()
+  let images = [img1, img2, img3, img4, img5, img6, img7]
+  // console.log(Math.floor(Math.random() * 7))
+  let getImage = () => {
+    return Math.floor(Math.random() * 7)
+  }
 
   return (
     <Box>
@@ -35,7 +43,7 @@ let Contents = () => {
             overflow="hidden"
           >
             <img
-              src={img4}
+              src={images[getImage()]}
               className="w-full h-full object-cover rounded-full"
               alt="no img 1"
             />
@@ -81,17 +89,17 @@ let Contents = () => {
         >
           <img
             className="h-2/3 shadow-2xl drop-shadow-lg mx-auto rounded"
-            src={img1}
+            src={images[getImage()]}
             alt="no img 1"
           />
           <img
             className="h-2/3 shadow-2xl drop-shadow-lg mx-auto rounded"
-            src={img2}
+            src={images[getImage()]}
             alt="no img 1"
           />
           <img
             className="h-2/3 shadow-2xl drop-shadow-lg mx-auto rounded"
-            src={img3}
+            src={images[getImage()]}
             alt="no img 1"
           />
         </SimpleGrid>
