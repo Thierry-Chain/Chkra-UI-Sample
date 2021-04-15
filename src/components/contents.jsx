@@ -6,7 +6,8 @@ import {
   HStack,
   Stack,
   Circle,
-  useColorMode
+  useColorMode,
+  Divider
 } from '@chakra-ui/react'
 import { PhoneIcon, StarIcon } from '@chakra-ui/icons'
 import img1 from '../assets/img/img1.jpg'
@@ -19,7 +20,7 @@ import img7 from '../assets/img/img7.jpg'
 
 let Contents = () => {
   let { colorMode } = useColorMode()
-  let images = [img1, img2, img3, img4, img5, img6, img7]
+  let images = [img1, img7, img4, img3, img5, img6, img2]
   // console.log(Math.floor(Math.random() * 7))
   let getImage = () => {
     return Math.floor(Math.random() * 7)
@@ -57,6 +58,7 @@ let Contents = () => {
                 fontSize="lg"
               >
                 <Text>MOSE Creative Mints</Text>
+                <Divider orientation="vertical" />
                 <PhoneIcon ml="2" />
               </HStack>
               <Flex py="" as="div" align="baseline">
@@ -73,6 +75,12 @@ let Contents = () => {
                     shots
                   </Text>
                 </Box>
+                <Divider
+                  bg="gray.900"
+                  colorScheme="teal"
+                  size="lg"
+                  orientation="vertical"
+                />
                 <Box ml="3">
                   <Text fontWeight="semibold">47446</Text>
                   <Text color="gray.500" fontWeight="hairline">
