@@ -7,7 +7,9 @@ import {
   Stack,
   Circle,
   useColorMode,
-  Divider
+  Divider,
+  Avatar,
+  Image
 } from '@chakra-ui/react'
 import { PhoneIcon, StarIcon } from '@chakra-ui/icons'
 import img1 from '../assets/img/img1.jpg'
@@ -37,7 +39,7 @@ let Contents = () => {
           align="center"
           ml="2"
         >
-          <Circle
+          {/* <Circle
             minHeight="full"
             rounded="full"
             maxWidth="150px"
@@ -48,7 +50,14 @@ let Contents = () => {
               className="w-full h-full object-cover rounded-full"
               alt="no img 1"
             />
-          </Circle>
+          </Circle> */}
+          <Image
+            maxWidth="150px"
+            borderRadius="full"
+            boxSize="150px"
+            src={images[getImage()]}
+            alt="thierry irambona"
+          />
           <Box color={colorMode === 'dark' && 'linkedin.400'}>
             <Stack>
               <HStack
