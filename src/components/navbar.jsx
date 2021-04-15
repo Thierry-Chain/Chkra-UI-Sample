@@ -15,7 +15,7 @@ import React from 'react'
 function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
-    <Box bg="gray.600" p="3">
+    <Box bg={colorMode === 'light' ? 'gray.600' : 'gray.700'} p="3">
       <Flex align="baseline" color="whiteAlpha.500" alignContent="space-around">
         <Text
           fontFamily="mono"
